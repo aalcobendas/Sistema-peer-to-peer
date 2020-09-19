@@ -1,0 +1,10 @@
+SERVIDOR:
+javac upperCase/ToUpper.java
+javac upperCase/ToUpperPublisher.java
+java upperCase/ToUpperPublisher //se lanza el servicio
+
+CLIENTE:
+curl http://localhost:8080/upperCase/ToUpper?wsdl > Mayusculas.wsdl
+ wsimport -p clienteP3 -keep Mayusculas.wsdl
+
+java client -s 0 -p 4200
